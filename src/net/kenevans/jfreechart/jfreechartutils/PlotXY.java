@@ -27,6 +27,7 @@ public class PlotXY
     protected XYSeriesCollection dataset = null;
     protected JFreeChart chart = null;
     ChartPanel panel = null;
+    ChartFrame frame = null;
 
     /**
      * Constructor that creates a chart from arrays of x values and y values. If
@@ -161,7 +162,7 @@ public class PlotXY
                 Utils.errMsg("Chart is invalid");
                 return;
             }
-            ChartFrame frame = new ChartFrame(frameTitle, chart);
+            frame = new ChartFrame(frameTitle, chart);
             frame.setLocationRelativeTo(null);
             frame.pack();
             frame.setVisible(true);
@@ -224,6 +225,13 @@ public class PlotXY
      */
     public ChartPanel getPanel() {
         return panel;
+    }
+
+    /**
+     * @return The value of frame.
+     */
+    public ChartFrame getFrame() {
+        return frame;
     }
 
     /**
